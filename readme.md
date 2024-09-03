@@ -17,6 +17,7 @@ ProyectoDockerMilton/
 │   ├── app.py
 │   ├── models.py
 │   ├── requirements.txt
+├   ├── logs/log.txt
 ├── instance/
 ├── logs/
 ├── .env
