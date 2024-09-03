@@ -19,6 +19,7 @@ ProyectoDockerMilton/
 │   ├── requirements.txt
 ├── instance/
 ├── logs/
+├── .env
 ├── docker-compose.yml
 ├── Dockerfile
 └── README.md
