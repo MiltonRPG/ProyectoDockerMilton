@@ -1,0 +1,23 @@
+2024-09-02 19:21:27,723 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.3:5000
+2024-09-02 19:21:27,724 [33mPress CTRL+C to quit[0m
+2024-09-02 19:23:10,257 172.19.0.1 - - [02/Sep/2024 19:23:10] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-02 19:24:04,349 172.19.0.1 - - [02/Sep/2024 19:24:04] "GET /items HTTP/1.1" 200 -
+2024-09-02 19:24:23,931 172.19.0.1 - - [02/Sep/2024 19:24:23] "GET /items HTTP/1.1" 200 -
+2024-09-02 19:24:39,684 172.19.0.1 - - [02/Sep/2024 19:24:39] "[33mGET /items/1 HTTP/1.1[0m" 404 -
+2024-09-02 19:24:55,019 172.19.0.1 - - [02/Sep/2024 19:24:55] "[31m[1mPOST /items HTTP/1.1[0m" 400 -
+2024-09-02 19:25:07,482 172.19.0.1 - - [02/Sep/2024 19:25:07] "GET /items HTTP/1.1" 200 -
+2024-09-02 19:25:13,434 172.19.0.1 - - [02/Sep/2024 19:25:13] "[33mGET /items/1 HTTP/1.1[0m" 404 -
+2024-09-02 19:29:39,105 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.3:5000
+2024-09-02 19:29:39,106 [33mPress CTRL+C to quit[0m
+2024-09-02 19:30:10,498 172.19.0.1 - - [02/Sep/2024 19:30:10] "GET / HTTP/1.1" 200 -
+2024-09-02 19:33:09,931 Item created: item1
+2024-09-02 19:33:09,932 172.19.0.1 - - [02/Sep/2024 19:33:09] "[35m[1mPOST /items HTTP/1.1[0m" 201 -
+2024-09-02 19:33:51,912 172.19.0.1 - - [02/Sep/2024 19:33:51] "GET /items HTTP/1.1" 200 -
+2024-09-02 19:34:14,866 172.19.0.1 - - [02/Sep/2024 19:34:14] "GET /items/1 HTTP/1.1" 200 -
+2024-09-03 17:30:30,631 172.19.0.1 - - [03/Sep/2024 17:30:30] "GET / HTTP/1.1" 200 -
