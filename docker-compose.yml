@@ -10,12 +10,43 @@ services:
       - .env  
     depends_on:
       - db
+
   db:
     image: mysql:5.7
-    environment:
-      env_file:
+    env_file:
       - .env  # Carga las variables necesarias para MySQL desde .env
     ports:
       - "3306:3306"
+
+  loki:
+    image: grafana/loki:2.8.1
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - "C:/Users/milto/OneDrive/Escritorio/BOOTCAMP/DOCKER/ProyectoDockerMilton/app/logs/loki:/etc/loki"
+
+  promtail:
+    image: grafana/promtail:2.8.1
+    volumes:
+      - "C:/Users/milto/OneDrive/Escritorio/BOOTCAMP/DOCKER/ProyectoDockerMilton/app/logs:/var/log"
+      - "C:/Users/milto/OneDrive/Escritorio/BOOTCAMP/DOCKER/ProyectoDockerMilton/app/logs/promptail:/etc/promtail"
+    command: -config.file=/etc/promtail/config.yml
+
+  grafana:
+    image: grafana/grafana:10.0.1
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}
+
+volumes:
+  grafana-storage:
+
+
+
+
 
 

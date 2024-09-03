@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+logs/
+
+# Docker
+*.pid
+*.sock
+docker-compose.override.yml
