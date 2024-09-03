@@ -1,10 +1,19 @@
 from flask import Flask, request, jsonify
 from models import db, Item  # Importamos la base de datos y el modelo Item
+from dotenv import load_dotenv
 import logging
 import os
 
+# Cargar las variables de entorno desde .env
+load_dotenv()
+
 # Inicializar la aplicación Flask
 app = Flask(__name__)
+
+# Configuración usando variables de entorno
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Configuración de la base de datos SQLite
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'

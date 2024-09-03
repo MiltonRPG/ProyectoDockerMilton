@@ -6,6 +6,8 @@ services:
       - "5000:5000"
     volumes:
       - ./app:/app  # Monta el directorio `app` en `/app` dentro del contenedor
+    env_file:
+      - .env  
     depends_on:
       - db
   db:
