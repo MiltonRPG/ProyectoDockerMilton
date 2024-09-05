@@ -12,8 +12,7 @@ services:
       - db
   db:
     image: mysql:5.7
-    environment:
-      env_file:
+    env_file:
       - .env  # Carga las variables necesarias para MySQL desde .env
     ports:
       - "3306:3306"
