@@ -4,7 +4,7 @@ __pycache__/
 
 # Logs
 *.log
-logs/
+*log.txt
 
 # Docker
 *.pid
