@@ -1,1 +1,12 @@
-app/logs/
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+*log.txt
+
+# Docker
+*.pid
+*.sock
+docker-compose.override.yml
