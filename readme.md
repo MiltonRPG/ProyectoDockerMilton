@@ -25,6 +25,15 @@ ProyectoDockerMilton/
 ├── Dockerfile
 └── README.md
 
+## Tecnología utilizadas
+
+Flask: Framework de Python para desarrollar la aplicación web.
+MySQL: Base de datos relacional para almacenar la información.
+Promtail: Herramienta que recolecta los logs generados por la aplicación.
+Loki: Almacena y gestiona los logs recolectados por Promtail.
+Grafana: Herramienta para la visualización de logs y métricas.
+Docker y Docker Compose: Para contenerizar y gestionar los servicios.
+
 ## Descripción de los Ficheros
 
 app.py: Archivo principal de la aplicación Flask que define los endpoints y la lógica del servidor.
@@ -77,11 +86,23 @@ curl http://localhost:5000/items
 - Obtener un item por ID:
 curl http://localhost:5000/items/1
 
-5. Monitorear los Logs
-Puedes ver los logs generados por la aplicación utilizando PowerShell:
-Get-Content logs/log.txt -Wait
+5. Acceder a Grafana:
+Una vez que los contenedores están corriendo, puedes acceder a Grafana para visualizar los logs en http://localhost:3000.
 
-O abrir el archivo logs/log.txt en un editor de texto para monitorear la actividad de la aplicación.
+Credenciales por defecto:
+Usuario: admin
+Contraseña: admin_password (definido en el archivo .env)
+
+En Grafana:
+
+Ve a la pestaña Explore.
+Selecciona Loki como data source.
+Usa la consulta {job="varlogs"} para ver los logs en tiempo real.
+
+Para probar que el sistema de logging funciona correctamente, puedes generar logs manualmente en el archivo de logs de la aplicación:
+
+echo "Test log entry" >> app/logs/log.txt
+
 
 6. Detener los Contenedores
 
